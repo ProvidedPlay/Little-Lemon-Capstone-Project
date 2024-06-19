@@ -1,0 +1,10 @@
+
+
+const HighlightsSection = () => {
+
+    return(
+        <p>Highlights Here</p>
+    )
+}
+
+export default HighlightsSection;
