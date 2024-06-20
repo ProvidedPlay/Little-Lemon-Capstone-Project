@@ -3,8 +3,10 @@
 const TestimonialsSection = () => {
 
     return(
-        <p>Testimonials Here</p>
+        <div className="TestimonialsSection">
+            <p>Testimonials Here</p>
+        </div>
     )
     }
 
-    export default TestimonialsSection;
+export default TestimonialsSection;

@@ -1,9 +1,11 @@
+import PageSection from "./PageSection";
 
-
-const Main = () => {
+const Main = ({children}) => {
 
     return(
-        <p>Main Here</p>
+        <div className="Main">
+        {children.map((child) => <PageSection children={child}/>)}
+        </div>
     )
 }
 

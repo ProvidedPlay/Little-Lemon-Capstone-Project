@@ -1,7 +1,6 @@
 import './App.css';
 
 import Header from './components/Header';
-import Nav from './components/Nav';
 import Main from './components/Main';
 import HeroSection from './components/HeroSection';
 import HighlightsSection from './components/HighlightsSection';
@@ -12,15 +11,14 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
+    <Main>
       <Header/>
-      <Nav/>
-      <Main>
-        <HeroSection/>
-        <HighlightsSection/>
-        <TestimonialsSection/>
-        <AboutSection/>
-      </Main>
+      <HeroSection/>
+      <HighlightsSection/>
+      <TestimonialsSection/>
+      <AboutSection/>
       <Footer/>
+    </Main>
     </>
   );
 }

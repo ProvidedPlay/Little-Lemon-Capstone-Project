@@ -3,7 +3,9 @@
 const AboutSection = () => {
 
     return(
-        <p>About Section Here</p>
+        <div className="AboutSection">
+            <p>About Section Here</p>
+        </div>
     )
 }
 

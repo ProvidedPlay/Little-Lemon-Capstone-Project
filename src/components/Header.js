@@ -1,9 +1,15 @@
-import logo from "../LittleLemonLogo.png"
+import Nav from "./Nav";
 
 const Header = () => {
 
     return(
-        <img src={logo}/>
+        <div className="header">
+            <header className="headerPanel">
+                <img className="Logo" src="/LittleLemonLogo.png" alt="Logo"/>
+                <Nav/>
+            </header>
+        </div>
+
     )
 }
 

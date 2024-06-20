@@ -1,38 +1,201 @@
-.App {
-  text-align: center;
+body{
+  max-width: 1440px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Main {
   display: flex;
   flex-direction: column;
+  background-color: white;
+}
+
+.Main > .PageSection {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.PageSection > div{
+  width: 60%;
+  padding-left: 20%;
+  padding-right: 20%;
+  justify-content: space-evenly;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 15.18vh;
+}
+
+.headerPanel {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  width: 61.5vw;
+  height: 6.66vh;
+  justify-content: space-around;
+  align-self: center;
+}
+
+.headerPanel .NavMenu {
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.heroSection {
+  background: linear-gradient(to bottom, #495e57 84%, white 0%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 55.4vh;
+  justify-content: space-between;
+}
+.heroTextSection{
+  width: 308pt;
+  border-style: dotted;
+  padding-top: 5vh;
+}
+.heroTextSection > * {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 1vh;
+  margin-bottom:1vh;
+  border-style: solid;
+}
+
+.heroTextSection #restaurantTitle {
+
+  width: 308pt;
+  height: 62pt;
+  background-color: black;
+  align-content: end;
+  margin-bottom: 0;
+}
+
+.heroImageSection {
+  display: flex;
+  justify-content: right;
+}
+
+.heroImage {
+  height: 52vh;
+  margin-top: 3.4vh;
+  border-radius: 1vw;
+  justify-content: right;
+}
+
+#restaurantTitle {
+  color: #f4ce14;
+}
+
+#restaurantSubTitle{
+  color: #edefee
+}
+
+#restaurantDescription{
+  color: #edefee;
+}
+
+.highlightsSection {
+  display: flex;
+  flex-direction: column;
+  height: 82vh;
+}
+
+.highlightsSection > section{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+
+.highlightsCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #edefee;
+  width: 18.3vw;
+  height: 54vh;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  overflow: hidden;
+}
+
+.highlightsCard > section{
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTextSection > section{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.NavMenu {
+  display: inline-flex;
+  flex-basis: auto;
+  list-style-type: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.Nav {
+  justify-content: space-between;
+}
+
+.Footer {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  list-style-type: none;
+}
+
+.Logo{
+  object-fit: contain;
+  width: 16.25vw;
+  height: 6.66vh;
+}
+
+.displayText {
+  font-family: 'Markazi Text';
+  font-size: 64px;
+  font-weight: 500;
+
+}
+
+.subtitleText {
+  font-family: 'Markazi Text';
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.itemText {
+  font-family: 'Karla';
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  text-decoration: none;
+}
+
+.displayDescriptionText {
+  font-family: "Karla";
+  font-size: 18px;
+  font-weight:500;
+}
+
+.buttonPrimary {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: #f4ce14;
+  height: 60px;
+  width: 200px;
+  padding: 0%;
+  border-style: none;
+  border-radius: 0.3vw;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
