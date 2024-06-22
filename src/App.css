@@ -1,11 +1,40 @@
 
-.Main {
+:root {
+  --webpage-vw: clamp(7.2px, 1vw, 14.4px);
+  --fluid-font-scaler: clamp(0.5px, calc(0.5px + 0.5 * (100vw - 720px)/720 ), 1px);
+
+  --plant-green: #495e57;
+  --lemon-yellow: #F4CE14;
+  --peach: #ee9972;
+  --cream: #FBDABB;
+  --light-grey: #EDEFEE;
+  --dark-grey: #333333;
+  --mid-grey: #d9d9d9;
+
+  --fluid-16: clamp(8px, calc(8px + 8 * ((100vw - 720px)/720)), 16px);
+  --fluid-18: clamp(9px, calc(9px + 9 * ((100vw - 720px)/720)), 18px);
+  --fluid-20: clamp(10px, calc(10px + 10 * ((100vw - 720px)/720)), 20px);
+  --fluid-24: clamp(12px, calc(12px + 12 * ((100vw - 720px)/720)), 24px);
+  --fluid-40: clamp(20px, calc(20px + 20 * ((100vw - 720px)/720)), 40px);
+  --fluid-64: clamp(32px, calc(32px + 32 * ((100vw - 720px)/720)), 64px);
+
+}
+
+.window{
+  display:flex;
+  flex-direction: column;
+  background-color: black;
+  align-items: center;
+}
+
+.webpage {
   display: flex;
   flex-direction: column;
   background-color: white;
+  width: calc(100 * var(--webpage-vw));
 }
 
-.Main > .PageSection {
+.webpage > .PageSection {
   display:flex;
   flex-direction: column;
   width: 100%;
@@ -21,14 +50,14 @@
 .header {
   display: flex;
   flex-direction: row;
-  height: 8.53875vw;
+  height: calc(8.53875*var(--webpage-vw));
 }
 
 .headerPanel {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  width: 61.5vw;
-  height: 3.75vw;
+  width: calc(61.5*var(--webpage-vw));
+  height: calc(3.75*var(--webpage-vw));
   justify-content: space-around;
   align-self: center;
 }
@@ -40,56 +69,56 @@
 }
 
 .heroSection {
-  background: linear-gradient(to bottom, #495e57 84%, white 0%);
+  background: linear-gradient(to bottom, var(--plant-green) 84%, white 0%);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 31.1625vw;
+  height: calc(31.1625*var(--webpage-vw));
   justify-content: space-between;
 }
 .heroTextSection{
-  width: 308px;
+  width: calc(308*var(--fluid-font-scaler));
   display:flex;
   flex-direction: column;
-  padding-top: 2.8125vw;
+  padding-top: calc(2.8125*var(--webpage-vw));
 }
 .heroTextSection > * {
   padding-top: 0;
   padding-bottom: 0;
   margin-top: 0;
   margin-bottom:0;
-  margin-left: 1vw
+  margin-left: calc(1*var(--webpage-vw))
 }
 
 .heroTextSection #restaurantTitle {
-  color: #f4ce14;
+  color: var(--lemon-yellow);
   display:flex;
-  width: 308px;
-  height: 52px;
+  width: calc(308*var(--fluid-font-scaler));
+  height: calc(52*var(--fluid-font-scaler));
   align-items:center;
-  margin-top: 1.18vw;
+  margin-top: calc(1.18*var(--webpage-vw));
 }
 
 .heroTextSection #restaurantSubTitle{
-  color: #edefee;
+  color: var(--light-grey);
   display: flex;
-  height:30px;
-  width: 112px;
+  height:calc(30*var(--fluid-font-scaler));
+  width: calc(112*var(--fluid-font-scaler));
   align-items: center;
-  margin-top: 0.5vw;
+  margin-top: calc(0.5*var(--webpage-vw));
 }
 
 .heroTextSection #restaurantDescription{
-  color: #edefee;
-  width: 248px;
-  height: 102px;
-  margin-top: 1.1vw;
+  color: var(--light-grey);
+  width: calc(248*var(--fluid-font-scaler));
+  height: calc(102*var(--fluid-font-scaler));
+  margin-top: calc(1.1*var(--webpage-vw));
   display:flex;
   align-items: center;
 
 }
 
 .heroTextSection .buttonPrimary{
-  margin-top:1.64vw
+  margin-top:calc(1.64*var(--webpage-vw))
 
 }
 
@@ -99,19 +128,19 @@
 }
 
 .heroImage {
-  height: 29.583vw;
-  width: 26.041vw;
-  margin-top: 1.56vw;
-  border-radius: 1vw;
+  height: calc(29.583*var(--webpage-vw));
+  width: calc(26.041*var(--webpage-vw));
+  margin-top: calc(1.56*var(--webpage-vw));
+  border-radius: calc(1*var(--webpage-vw));
   justify-content: right;
 }
 
 .highlightsSection {
   display: flex;
   flex-direction: column;
-  height: 42.44vw;
-  width: 59.722vw !important;
-  padding-left: 20.138vw !important
+  height: calc(42.44*var(--webpage-vw));
+  width: calc(59.722*var(--webpage-vw)) !important;
+  padding-left: calc(20.138*var(--webpage-vw)) !important
 }
 
 .highlightsSection > section{
@@ -122,55 +151,56 @@
 }
 
 .highlightsSection #highlightsSectionBanner {
-  margin-top: 1.5vw;
-  margin-bottom: 1.5vw;
-  height: 5.3472vw;
+  margin-top: calc(1.5*var(--webpage-vw));
+  margin-bottom: calc(1.5*var(--webpage-vw));
+  height: calc(5.3472*var(--webpage-vw));
   align-items: start;
 }
 .highlightsSection #highlightsSectionBanner .displayText {
   margin-block-start:0;
   margin-block-end: 0;
   display: flex;
-  height: 64px;
+  height: var(--fluid-64);
   align-items:end;
 }
 
 .highlightsCard {
   display: flex;
   flex-direction: column;
-  background-color: #edefee;
-  width: 18.3vw;
-  height: 30.486vw;
-  border-top-left-radius: 1vw;
-  border-top-right-radius: 1vw;
+  background-color: var(--light-grey);
+  width: calc(18.3*var(--webpage-vw));
+  height: calc(30.486*var(--webpage-vw));
+  border-top-left-radius: calc(1*var(--webpage-vw));
+  border-top-right-radius: calc(1*var(--webpage-vw));
   overflow: hidden;
 }
 
 .highlightsCard > section{
-  display: grid;
+  display: flex;
+  flex-direction: column;
 }
 
 .highlightsCard .cardImageSection {
-  height: 12.865vw;
-  width: 18.379vw;
+  height: calc(12.865*var(--webpage-vw));
+  width: calc(18.379*var(--webpage-vw));
 }
 
 .cardTextSection{
-  height: 17.620vw;
-  width: 18.379vw;
-  padding-bottom: 1.6642vw;
+  height: calc(17.620*var(--webpage-vw));
+  width: calc(18.379*var(--webpage-vw));
+  padding-bottom: calc(1.6642*var(--webpage-vw));
 }
 .cardTextSection > section{
   display:flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-left: 1.6642vw;
-  padding-right: 1.6642vw;
+  padding-left: calc(1.6642*var(--webpage-vw));
+  padding-right: calc(1.6642*var(--webpage-vw));
 }
 
 .cardTextSection .cardSubTitleText{
-  color: #ee9972;
+  color: var(--peach);
 }
 
 .cardTextSection .paragraphTextRegular{
@@ -193,8 +223,8 @@
 .Footer {
   display: flex;
   flex-direction: row;
-  height: 28.958vw;
-  background-color: #d9d9d9;
+  height: calc(28.958*var(--webpage-vw));
+  background-color: var(--mid-grey);
   align-items: center;
 }
 
@@ -216,7 +246,7 @@
 }
 
 .footerPanel .sectionTitleText {
-  color: #495e57;
+  color: var(--plant-green);
 }
 
 li {
@@ -225,26 +255,26 @@ li {
 
 .Logo{
   object-fit: contain;
-  width: 16.25vw;
-  height: 3.75vw;
+  width: calc(16.25*var(--webpage-vw));
+  height: calc(3.75*var(--webpage-vw));
 }
 
 .displayText {
   font-family: 'Markazi Text';
-  font-size: 64px;
+  font-size: var(--fluid-64);
   font-weight: 500;
 
 }
 
 .subtitleText {
   font-family: 'Markazi Text';
-  font-size: 40px;
+  font-size: var(--fluid-40);
   font-weight: 400;
 }
 
 .itemText {
   font-family: 'Karla';
-  font-size: 20px;
+  font-size: var(--fluid-20);
   font-weight: 700;
   color: black;
   text-decoration: none;
@@ -252,13 +282,13 @@ li {
 
 .displayDescriptionText {
   font-family: "Karla";
-  font-size: 18px;
+  font-size: var(--fluid-18);
   font-weight:500;
 }
 
 .cardTitleText{
   font-family: 'Markazi Text';
-  font-size: 24px;
+  font-size: var(--fluid-24);
   font-weight: 500;
   line-height: 90%;
   text-align: left;
@@ -266,34 +296,34 @@ li {
 
 .cardSubTitleText{
   font-family: 'Karla';
-  font-size: 16px;
+  font-size: var(--fluid-16);
   font-weight: 700;
   text-align: left;
 }
 
 .cardLinkText{
   font-family: 'Karla';
-  font-size: 16px;
+  font-size: var(--fluid-16);
   font-weight: 700;
   text-align: left;
   align-items: start;
   text-decoration: none;
-  color: #333333;
+  color: var(--dark-grey);
 }
 
 .paragraphTextRegular{
   font-family: 'Karla';
   font-weight: 400;
-  font-size: 16;
+  font-size: var(--fluid-16);
   align-items: start;
-  max-width: 297px;
-  color: #495e57;
+  max-width: calc(297*var(--fluid-font-scaler));
+  color: var(--plant-green);
 }
 
 .sectionTitleText{
   font-family: 'Karla';
   font-weight: 800;
-  font-size: 20px;
+  font-size: var(--fluid-20);
   text-align: left;
   align-items: start;
 }
@@ -301,10 +331,10 @@ li {
 .softHighlightText{
   font-family: 'Karla';
   font-weight: 500;
-  font-size: 20px;
+  font-size: var(--fluid-20);
   text-align: left;
   align-items: start;
-  max-width: 210.86px;
+  max-width: calc(210.86*var(--fluid-font-scaler));
   color: 333333;
 }
 
@@ -312,12 +342,12 @@ li {
   position: relative;
   display: flex;
   flex-direction: row;
-  background-color: #f4ce14;
-  height: 60px;
-  width: 200px;
+  background-color: var(--lemon-yellow);
+  height: calc(60*var(--fluid-font-scaler));
+  width: calc(200*var(--fluid-font-scaler));
   padding: 0%;
   border-style: none;
-  border-radius: 0.3vw;
+  border-radius: calc(0.3*var(--webpage-vw));
   align-items: center;
   justify-content: center;
 }
