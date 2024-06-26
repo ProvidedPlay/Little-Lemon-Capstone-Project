@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import NavExtended from "./NavExtended";
 
 const Header = () => {
 

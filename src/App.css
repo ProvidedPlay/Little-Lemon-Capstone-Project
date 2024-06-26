@@ -260,6 +260,10 @@
     padding: 0;
   }
 
+  .navExtendedMenu {
+    display: none;
+  }
+
   .navButton {
     display: none;
   }
@@ -447,10 +451,6 @@
     align-items: center;
   }
 
-  .headerPanel .NavMenu {
-    display: none;
-  }
-
   .heroSection {
     background: var(--plant-green);
     display: grid;
@@ -622,7 +622,8 @@
   }
 
   .NavMenu {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     flex-basis: auto;
     list-style-type: none;
     align-items: center;
@@ -633,6 +634,46 @@
   .Nav {
     display: flex;
     justify-content: right;
+  }
+
+  .Nav .NavMenu{
+    display: none;
+  }
+
+  .navExtendedMenu.retracted{
+    height: 0vw;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navExtendedMenu.extended{
+    transition: all 0.3s ease-in-out;
+    height: calc(44 * var(--webpage-vw));
+    width: 100%;
+    background-color: #333333;
+  }
+
+  .navExtendedMenu.extended .NavMenu{
+    display:flex;
+    flex-direction: column;
+    justify-items: center !important;
+  }
+  .navExtendedMenu .NavMenu li{
+    display:flex;
+    width: 100%;
+    height: calc(7*var(--webpage-vw));
+    justify-content:center;
+    align-items: center;
+    border-bottom-style: groove;
+    border-bottom-width: 1.5px;
+  }
+
+  .navExtendedMenu .NavMenu li > *{
+    display:inline-block;
+    width: 100%;
+    justify-self: center;
+    text-align: center;
+    color:white;
+    text-shadow: black 1px 1px;
   }
 
   .Footer {

@@ -1,10 +1,23 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useAppContext } from "../context/AppContextProvider";
 
 const Nav = () => {
 
+    const {
+        menuIsOpen, setMenuIsOpen
+    } = useAppContext()
+
+    const handleToggleMenu=() => {
+        setMenuIsOpen(!menuIsOpen)
+    }
     return(
-        <div className="Nav">
-            <ul className="NavMenu">
+        <nav className="Nav">
+
+            <section className={`navButton`} onClick={() => handleToggleMenu()}>
+                <img className="navButtonIcon" src="/icon _hamburger menu_.png"/>
+            </section>
+            <ul className={`NavMenu`}>
                 <li><Link to="/" className="itemText">Home</Link></li>
                 <li><a className="itemText" href="url here">About</a></li>
                 <li><a className="itemText" href="url here">Menu</a></li>
@@ -12,8 +25,8 @@ const Nav = () => {
                 <li><a className="itemText" href="url here">Order Online</a></li>
                 <li><a className="itemText" href="url here">Login</a></li>
             </ul>
-            <img className="navButton" src="/icon _hamburger menu_.png"/>
-        </div>
+            {/* Mobile version*/}
+        </nav>
     )
 }
 
