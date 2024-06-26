@@ -1,24 +1,19 @@
 import './App.css';
 
-import Header from './components/Header';
-import Main from './components/Main';
-import HeroSection from './components/HeroSection';
-import HighlightsSection from './components/HighlightsSection';
-import TestimonialsSection from './components/TestimonialsSection';
-import AboutSection from './components/AboutSection';
-import Footer from './components/Footer';
+import Homepage from './pages/Homepage';
+import Reservations from './pages/Reservations';
+import ReservationsConfirmed from './pages/ReservationConfirmed';
+import {Routes, Route, Link } from "react-router-dom"
+
 
 function App() {
   return (
     <>
-    <Main>
-      <Header/>
-      <HeroSection/>
-      <HighlightsSection/>
-      <TestimonialsSection/>
-      <AboutSection/>
-      <Footer/>
-    </Main>
+      <Routes>
+        <Route path='/' element={<Homepage/>} />
+        <Route path='/reservations' element={<Reservations/>} />
+        <Route path='/reservationsConfirmed' element={<ReservationsConfirmed/>} />
+      </Routes>
     </>
   );
 }

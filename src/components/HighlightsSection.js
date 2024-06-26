@@ -6,7 +6,7 @@ const HighlightsSection = () => {
     return(
         <div className="highlightsSection" id="highlightsSection">
             <section id="highlightsSectionBanner">
-                <h1 className="displayText">This week’s specials!</h1>
+                <h1 className="displayText" id="highlightsSectionBannerText">This week’s specials!</h1>
                 <button className="buttonPrimary">
                     <p className="itemText">Online Menu</p>
                 </button>
