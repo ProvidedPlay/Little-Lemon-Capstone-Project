@@ -1,21 +1,23 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { useAppContext } from "../context/AppContextProvider";
+import useMenuToggler from "../hooks/useMenuToggler";
 
 const Nav = () => {
 
     const {
-        menuIsOpen, setMenuIsOpen
+        menuIsOpen,
     } = useAppContext()
 
+    const {toggleMenu} = useMenuToggler();
+
     const handleToggleMenu=() => {
-        setMenuIsOpen(!menuIsOpen)
+        toggleMenu();
     }
     return(
         <nav className="Nav">
 
-            <section className={`navButton`} onClick={() => handleToggleMenu()}>
-                <img className="navButtonIcon" src="/icon _hamburger menu_.png"/>
+            <section className={`navButton ${menuIsOpen ? "open" : "closed"}`} onClick={() => handleToggleMenu()}>
+                <img className="navButtonIcon" src="/icon _hamburger menu_.png" alt="Nav Menu Button"/>
             </section>
             <ul className={`NavMenu`}>
                 <li><Link to="/" className="itemText">Home</Link></li>

@@ -1,11 +1,27 @@
 import { useState } from "react";
+import useMenuToggler from "../hooks/useMenuToggler";
 import { Link } from "react-router-dom";
 
 const BookingSection = () => {
     const [contactMethodPlaceholderText, setContactMethodPlaceholderText] = useState("Enter email address here:");
 
+    const {closeMenu} = useMenuToggler();
+
+    const handleToggleMenu=() => {
+        closeMenu();
+    }
     const handleContactMethodPlaceholderTextChange = (contactMethodPlaceholderText) => {
         setContactMethodPlaceholderText(contactMethodPlaceholderText);
+    }
+
+    const getFutureDayMonth =  (daysAfterToday) => {
+        const date = new Date()
+        const targetDate = new Date(date)
+
+        targetDate.setDate(targetDate.getDate() + daysAfterToday)
+        return(
+            `${targetDate.toLocaleString('default', {month:'long'})} ${targetDate.getDate().toLocaleString()}`
+        )
     }
 
     return(
@@ -16,9 +32,9 @@ const BookingSection = () => {
             <form id="bookingSectionDetails">
                 <section id="bookingSectionTableDetails">
                     <fieldset className="bookingDetailCard" id="numOfPeopleCard">
-                        <img className="bookingDetailCardIcon" id="peopleIcon" src="/People Icon.png"/>
+                        <img className="bookingDetailCardIcon" id="peopleIcon" src="/People Icon.png" alt="Number of People Icon"/>
                         <legend for="numOfPeopleField">Number of People</legend>
-                        <select id="numOfPeopleList">
+                        <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="numOfPeopleList">
                             <option value="1 Person">1 Person</option>
                             <option value="2 People">2 People</option>
                             <option value="3 People">3 People</option>
@@ -31,39 +47,60 @@ const BookingSection = () => {
                         </select>
                     </fieldset>
                     <fieldset className="bookingDetailCard" id="reservationDateCard">
-                        <img className="bookingDetailCardIcon" id="peopleIcon" src="/Calendar Icon.png"/>
+                        <img className="bookingDetailCardIcon" id="peopleIcon" src="/Calendar Icon.png" alt="Calendar Icon"/>
                         <legend for="reservationDateField">Reservation Date</legend>
-                        <input type="date" id="reservationDateField" name="reservationDateField"/>
+                        <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="reservationDateField">
+                            <option value={()=> {getFutureDayMonth(0).toString()}}>{getFutureDayMonth(0)}</option>
+                            <option value={()=> {getFutureDayMonth(1).toString()}}>{getFutureDayMonth(1)}</option>
+                            <option value={()=> {getFutureDayMonth(2).toString()}}>{getFutureDayMonth(2)}</option>
+                            <option value={()=> {getFutureDayMonth(3).toString()}}>{getFutureDayMonth(3)}</option>
+                            <option value={()=> {getFutureDayMonth(4).toString()}}>{getFutureDayMonth(4)}</option>
+                            <option value={()=> {getFutureDayMonth(5).toString()}}>{getFutureDayMonth(5)}</option>
+                            <option value={()=> {getFutureDayMonth(6).toString()}}>{getFutureDayMonth(6)}</option>
+                            <option value={()=> {getFutureDayMonth(7).toString()}}>{getFutureDayMonth(7)}</option>
+                            <option value={()=> {getFutureDayMonth(8).toString()}}>{getFutureDayMonth(8)}</option>
+                        </select>
                     </fieldset>
                     <fieldset className="bookingDetailCard" id="reservationTimeCard">
-                        <img className="bookingDetailCardIcon" id="calendarIcon" src="/Clock Icon.png"/>
+                        <img className="bookingDetailCardIcon" id="calendarIcon" src="/Clock Icon.png" alt="Clock Icon"/>
                         <legend for="reservationTimeField">Reservation Time</legend>
-                        <input type="time" id="reservationTimeField" name="reservationTimeField"/>
+                        <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="reservationDateField">
+                            <option value="7:00">7:00 PM</option>
+                            <option value="7:00">7:30 PM</option>
+                            <option value="8:00">8:00 PM</option>
+                            <option value="8:00">8:30 PM</option>
+                            <option value="9:00">9:00 PM</option>
+                            <option value="9:00">9:30 PM</option>
+                            <option value="10:00">10:00 PM</option>
+                            <option value="10:00">10:30 PM</option>
+                            <option value="11:00">11:00 PM</option>
+                        </select>
                     </fieldset>
                 </section>
                 <section id="bookingSectionSpecialRequests">
-                    <fieldset className="BookingInputSection">
+                    <fieldset className="bookingInputSection">
                         <legend for="bookingSectionSpecialRequestsField">Special Requests</legend>
-                        <textarea form="bookingSectionDetails" name="bookingSectionSpecialRequestsField" id="bookingSectionSpecialRequestsField" placeholder="Special Requests:"/>
+                        <textarea className="thickGreyBorder cardSubTitleText" form="bookingSectionDetails" name="bookingSectionSpecialRequestsField" id="bookingSectionSpecialRequestsField" placeholder="Special Requests:"/>
                     </fieldset>
                 </section>
                 <section id="bookingSectionContactInfo">
-                    <fieldset className="BookingInputSection">
+                    <h1 className="bookingSectionConfirmationText softSectionTitleText">Confirmation Details</h1>
+                    <fieldset className="bookingInputSection thickGreyBorder">
                         <legend for="bookingSectionContactInfoField">Confirmation Details</legend>
-                        <label className="contactInfoOptionField" id="contactInfoEmailOptionField">
+                        <label className="contactInfoOptionField  thickGreyBorder" id="contactInfoEmailOptionField">
                             <input type="radio" name="bookingSectionContactInfoField" value="emailOption" onClick={() => handleContactMethodPlaceholderTextChange("Enter email address here:")}/>
                             <img src="/Email Icon.png" alt="Option 1"/>
                         </label>
-                        <label className="contactInfoOptionField" id="contactInfoPhoneOptionField">
+                        <label className="contactInfoOptionField thickGreyBorder" id="contactInfoPhoneOptionField">
                             <input type="radio" name="bookingSectionContactInfoField" value="phoneOption" onClick={() => handleContactMethodPlaceholderTextChange("Enter phone number here:")}/>
-                            <img src="/Phone Icon.png" alt="Option 1"/>
+                            <img src="/Phone Icon.png" alt="Option 2"/>
                         </label>
-                        <input type="text" name="contactInfoTextField" id="contactInfoTextField" placeholder={contactMethodPlaceholderText}/>
+                        <input className="contactInfoTextField thickGreyBorder cardSubTitleText" type="text" name="contactInfoTextField" id="contactInfoTextField" placeholder={contactMethodPlaceholderText}/>
                     </fieldset>
                 </section>
                 <section className="bookingSectionSubmitForm">
                     <button className="buttonPrimary" type="submit" value="Submit">
-                        <Link className="link" to="/reservationsConfirmed">
+                        <Link className="link" to="/reservationsConfirmed" onClick={()=>handleToggleMenu()}>
                             <p className="itemText">Continue</p>
                         </Link>
                     </button>

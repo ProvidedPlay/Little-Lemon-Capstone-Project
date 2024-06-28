@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import useMenuToggler from "../hooks/useMenuToggler";
 import { useAppContext } from "../context/AppContextProvider";
 
 const NavExtended = () => {
 
     const {
-        menuIsOpen, setMenuIsOpen,
+        menuIsOpen,
     } = useAppContext()
 
+    const {toggleMenu} = useMenuToggler();
+
     const handleToggleMenu=() => {
-        setMenuIsOpen(!menuIsOpen)
+        toggleMenu();
     }
 
     return(

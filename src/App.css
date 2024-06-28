@@ -380,6 +380,14 @@
     align-items: start;
   }
 
+  .softSectionTitleText{
+    font-family: 'Karla';
+    font-weight: 700;
+    font-size: var(--fluid-18);
+    text-align: left;
+    align-items: start;
+  }
+
   .softHighlightText{
     font-family: 'Karla';
     font-weight: 500;
@@ -621,6 +629,177 @@
     display: none;
   }
 
+  #bookingSectionTableDetails{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #bookingSectionTableDetails .bookingDetailCard {
+    display: flex;
+    flex-direction: column;
+    height: calc(21.26168* var(--webpage-vw));
+    width: calc(25.9345*var(--webpage-vw));
+    align-items: center;
+    justify-content: space-around;
+    margin:0;
+    padding-left: 0;
+    padding-right: 0;
+    border:none;
+  }
+
+  .bookingDetailCard legend{
+    display: none;
+  }
+  .bookingDetailCard .bookingDetailCardIcon{
+    height: calc(12.6168*var(--webpage-vw));
+    object-fit: contain;
+    width: auto;
+  }
+
+  .bookingDetailCard .bookingDetailInputField{
+    margin:0;
+    padding: 0;
+    width: calc(25.9345*var(--webpage-vw));
+  }
+
+  .bookingDetailInputField.cardSubTitleText{
+    color:var(--plant-green);
+  }
+
+  #bookingSectionSpecialRequests{
+    display:flex;
+    justify-content: center;
+    align-items: start;
+    border-bottom-style: groove;
+    border-bottom-width: 1px;
+    height: calc(38.5514* var(--webpage-vw));
+  }
+
+  #bookingSectionSpecialRequests .bookingInputSection{
+    display: flex;
+    border:none;
+    height: calc(34.5794* var(--webpage-vw));
+    width: calc(92.056*var(--webpage-vw));
+    margin-left: 0;
+    margin-right:0;
+    padding-left: 0;
+    padding-right:0;
+  }
+
+  #bookingSectionSpecialRequests .bookingInputSection #bookingSectionSpecialRequestsField{
+    width: 100%;
+    height:100%;
+    background-color: var(--light-grey);
+  }
+
+  .bookingInputSection legend{
+    display: none;
+  }
+
+  #bookingSectionContactInfo{
+    height: calc(56.0747* var(--webpage-vw));
+  }
+  #bookingSectionContactInfo .bookingSectionConfirmationText{
+    display:flex;
+    margin:0;
+    padding-top: calc(6.0747* var(--webpage-vw));
+    padding-bottom: calc(0.4672*var(--webpage-vw));
+    align-content: end;
+  }
+  #bookingSectionContactInfo .bookingInputSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    align-content: center;
+    height: calc(42.7570* var(--webpage-vw));
+    max-width: calc(92.056*var(--webpage-vw));
+  }
+  #bookingSectionContactInfo .bookingInputSection #contactInfoEmailOptionField{
+    margin-left: calc(8*var(--fluid-font-scaler));
+    margin-right: auto;
+    margin-bottom: calc(8*var(--fluid-font-scaler));
+  }
+  #bookingSectionContactInfo .bookingInputSection #contactInfoPhoneOptionField{
+    margin-left: auto;
+    margin-right: calc(8*var(--fluid-font-scaler));
+    margin-bottom: calc(8*var(--fluid-font-scaler));
+  }
+  #bookingSectionContactInfo .bookingInputSection #contactInfoTextField{
+    margin-left: calc(8*var(--fluid-font-scaler));
+    margin-right: calc(8*var(--fluid-font-scaler));
+  }
+  .contactInfoOptionField{
+    display:flex;
+    border-color: white!important;
+    max-height: calc(23.3644* var(--webpage-vw));
+    width: calc(28.2710* var(--webpage-vw));
+    align-items: center;
+    justify-content: center;
+  }
+  .contactInfoOptionField:hover{
+    transition: all 0.2s ease-in-out;
+    border-color: var(--mid-grey)!important;
+  }
+  .contactInfoOptionField:has(> input:checked){
+    transition: all 0.2s ease-in-out;
+    background-color: var(--light-grey);
+    border-color: var(--mid-grey)!important;
+  }
+  .contactInfoOptionField input{
+    position:absolute;
+    opacity: 0;
+    width: 0;
+    height:0;
+  }
+  .contactInfoTextField{
+    grid-column: span 2;
+    height: calc(06.3084* var(--webpage-vw));
+    max-width: calc(354 * var(--fluid-font-scaler));
+  }
+  .bookingSectionSubmitForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: calc(7.2429* var(--webpage-vw));
+    margin-bottom: calc(1*var(--webpage-vw));
+  }
+  #bookingConfirmedSectionBanner{
+    display: flex;
+    align-items: center;
+    height:calc(17.2897*var(--webpage-vw));
+    border-bottom-style: groove;
+    border-width: 1px;
+  }
+  #bookingConfirmedSectionDetails{
+    display: flex;
+    flex-direction: column;
+    height: calc(116.794 * var(--webpage-vw));
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-grey);
+    border-radius: calc(2*var(--webpage-vw));
+    margin-left: calc(-2*var(--webpage-vw));
+    margin-right: calc(-2*var(--webpage-vw));
+    margin-top: calc(6.0747*var(--webpage-vw));
+    padding-left: calc(2*var(--webpage-vw));
+    padding-right: calc(2*var(--webpage-vw));
+  }
+  #bookingConfirmedSectionDetails * {
+    display: flex;
+    margin: 0;
+  }
+  .bookingConfirmedSection #bookingConfirmedSectionReturn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: calc(3.3429* var(--webpage-vw));
+    margin-bottom: calc(1*var(--webpage-vw));
+  }
+
+/* Nav Menu*/
   .NavMenu {
     display: flex;
     flex-direction: column;
@@ -647,7 +826,7 @@
 
   .navExtendedMenu.extended{
     transition: all 0.3s ease-in-out;
-    height: calc(44 * var(--webpage-vw));
+    height: calc(43.2 * var(--webpage-vw));
     width: 100%;
     background-color: #333333;
   }
@@ -754,6 +933,13 @@
     text-align: left;
   }
 
+  .cardOptionTitleText{
+    font-family: 'Karla';
+    font-size: var(--fluid-16);
+    font-weight: 800;
+    text-align: left;
+  }
+
   .cardLinkText{
     font-family: 'Karla';
     font-size: var(--fluid-16);
@@ -781,6 +967,14 @@
     align-items: start;
   }
 
+  .softSectionTitleText{
+    font-family: 'Karla';
+    font-weight: 700;
+    font-size: var(--fluid-18);
+    text-align: left;
+    align-items: start;
+  }
+
   .softHighlightText{
     font-family: 'Karla';
     font-weight: 500;
@@ -803,5 +997,12 @@
     border-radius: calc(3.5*var(--webpage-vw));
     align-items: center;
     justify-content: center;
+  }
+
+  .thickGreyBorder {
+    border-style: solid;
+    border-width: 6px;
+    border-radius: calc(1*var(--webpage-vw));
+    border-color: var(--mid-grey);
   }
 }
