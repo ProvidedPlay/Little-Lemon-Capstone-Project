@@ -35,45 +35,45 @@ const BookingSection = () => {
                         <img className="bookingDetailCardIcon" id="peopleIcon" src="/People Icon.png" alt="Number of People Icon"/>
                         <legend for="numOfPeopleField">Number of People</legend>
                         <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="numOfPeopleList">
-                            <option value="1 Person">1 Person</option>
-                            <option value="2 People">2 People</option>
-                            <option value="3 People">3 People</option>
-                            <option value="4 People">4 People</option>
-                            <option value="5 People">5 People</option>
-                            <option value="6 People">6 People</option>
-                            <option value="7 People">7 People</option>
-                            <option value="8 People">8 People</option>
-                            <option value="9 People">9 People</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="1 Person">1 Person</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="2 People">2 People</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="3 People">3 People</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="4 People">4 People</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="5 People">5 People</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="6 People">6 People</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="7 People">7 People</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="8 People">8 People</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="9 People">9 People</option>
                         </select>
                     </fieldset>
                     <fieldset className="bookingDetailCard" id="reservationDateCard">
                         <img className="bookingDetailCardIcon" id="peopleIcon" src="/Calendar Icon.png" alt="Calendar Icon"/>
                         <legend for="reservationDateField">Reservation Date</legend>
                         <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="reservationDateField">
-                            <option value={()=> {getFutureDayMonth(0).toString()}}>{getFutureDayMonth(0)}</option>
-                            <option value={()=> {getFutureDayMonth(1).toString()}}>{getFutureDayMonth(1)}</option>
-                            <option value={()=> {getFutureDayMonth(2).toString()}}>{getFutureDayMonth(2)}</option>
-                            <option value={()=> {getFutureDayMonth(3).toString()}}>{getFutureDayMonth(3)}</option>
-                            <option value={()=> {getFutureDayMonth(4).toString()}}>{getFutureDayMonth(4)}</option>
-                            <option value={()=> {getFutureDayMonth(5).toString()}}>{getFutureDayMonth(5)}</option>
-                            <option value={()=> {getFutureDayMonth(6).toString()}}>{getFutureDayMonth(6)}</option>
-                            <option value={()=> {getFutureDayMonth(7).toString()}}>{getFutureDayMonth(7)}</option>
-                            <option value={()=> {getFutureDayMonth(8).toString()}}>{getFutureDayMonth(8)}</option>
+                            <option className="bookingDetailOption cardSubTitleText" value={()=> {getFutureDayMonth(0).toString()}}>{getFutureDayMonth(0)}</option>
+                            <option className="bookingDetailOption cardSubTitleText" value={()=> {getFutureDayMonth(1).toString()}}>{getFutureDayMonth(1)}</option>
+                            <option className="bookingDetailOption cardSubTitleText" value={()=> {getFutureDayMonth(2).toString()}}>{getFutureDayMonth(2)}</option>
+                            <option className="bookingDetailOption cardSubTitleText" value={()=> {getFutureDayMonth(3).toString()}}>{getFutureDayMonth(3)}</option>
+                            <option className="bookingDetailOption cardSubTitleText" value={()=> {getFutureDayMonth(4).toString()}}>{getFutureDayMonth(4)}</option>
+                            <option className="bookingDetailOption cardSubTitleText" value={()=> {getFutureDayMonth(5).toString()}}>{getFutureDayMonth(5)}</option>
+                            <option className="bookingDetailOption cardSubTitleText" value={()=> {getFutureDayMonth(6).toString()}}>{getFutureDayMonth(6)}</option>
+                            <option className="bookingDetailOption cardSubTitleText" value={()=> {getFutureDayMonth(7).toString()}}>{getFutureDayMonth(7)}</option>
+                            <option className="bookingDetailOption cardSubTitleText" value={()=> {getFutureDayMonth(8).toString()}}>{getFutureDayMonth(8)}</option>
                         </select>
                     </fieldset>
                     <fieldset className="bookingDetailCard" id="reservationTimeCard">
                         <img className="bookingDetailCardIcon" id="calendarIcon" src="/Clock Icon.png" alt="Clock Icon"/>
                         <legend for="reservationTimeField">Reservation Time</legend>
                         <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="reservationDateField">
-                            <option value="7:00">7:00 PM</option>
-                            <option value="7:00">7:30 PM</option>
-                            <option value="8:00">8:00 PM</option>
-                            <option value="8:00">8:30 PM</option>
-                            <option value="9:00">9:00 PM</option>
-                            <option value="9:00">9:30 PM</option>
-                            <option value="10:00">10:00 PM</option>
-                            <option value="10:00">10:30 PM</option>
-                            <option value="11:00">11:00 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="7:00">7:00 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="7:00">7:30 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="8:00">8:00 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="8:00">8:30 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="9:00">9:00 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="9:00">9:30 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="10:00">10:00 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="10:00">10:30 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="11:00">11:00 PM</option>
                         </select>
                     </fieldset>
                 </section>
