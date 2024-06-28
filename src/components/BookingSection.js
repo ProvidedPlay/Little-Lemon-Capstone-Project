@@ -33,7 +33,7 @@ const BookingSection = () => {
                 <section id="bookingSectionTableDetails">
                     <fieldset className="bookingDetailCard" id="numOfPeopleCard">
                         <img className="bookingDetailCardIcon" id="peopleIcon" src="/People Icon.png" alt="Number of People Icon"/>
-                        <legend for="numOfPeopleField">Number of People</legend>
+                        <legend className="cardSubTitleText" for="numOfPeopleField">Number of People</legend>
                         <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="numOfPeopleList">
                             <option className="bookingDetailOption cardSubTitleText" value="1 Person">1 Person</option>
                             <option className="bookingDetailOption cardSubTitleText" value="2 People">2 People</option>
@@ -48,7 +48,7 @@ const BookingSection = () => {
                     </fieldset>
                     <fieldset className="bookingDetailCard" id="reservationDateCard">
                         <img className="bookingDetailCardIcon" id="peopleIcon" src="/Calendar Icon.png" alt="Calendar Icon"/>
-                        <legend for="reservationDateField">Reservation Date</legend>
+                        <legend className="cardSubTitleText" for="reservationDateField">Reservation Date</legend>
                         <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="reservationDateField">
                             <option className="bookingDetailOption cardSubTitleText" value={()=> {getFutureDayMonth(0).toString()}}>{getFutureDayMonth(0)}</option>
                             <option className="bookingDetailOption cardSubTitleText" value={()=> {getFutureDayMonth(1).toString()}}>{getFutureDayMonth(1)}</option>
@@ -63,7 +63,7 @@ const BookingSection = () => {
                     </fieldset>
                     <fieldset className="bookingDetailCard" id="reservationTimeCard">
                         <img className="bookingDetailCardIcon" id="calendarIcon" src="/Clock Icon.png" alt="Clock Icon"/>
-                        <legend for="reservationTimeField">Reservation Time</legend>
+                        <legend className="cardSubTitleText" for="reservationTimeField">Reservation Time</legend>
                         <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="reservationDateField">
                             <option className="bookingDetailOption cardSubTitleText" value="7:00">7:00 PM</option>
                             <option className="bookingDetailOption cardSubTitleText" value="7:00">7:30 PM</option>
@@ -79,14 +79,14 @@ const BookingSection = () => {
                 </section>
                 <section id="bookingSectionSpecialRequests">
                     <fieldset className="bookingInputSection">
-                        <legend for="bookingSectionSpecialRequestsField">Special Requests</legend>
+                        <legend className="cardSubTitleText" for="bookingSectionSpecialRequestsField">Special Requests</legend>
                         <textarea className="thickGreyBorder cardSubTitleText" form="bookingSectionDetails" name="bookingSectionSpecialRequestsField" id="bookingSectionSpecialRequestsField" placeholder="Special Requests:"/>
                     </fieldset>
                 </section>
                 <section id="bookingSectionContactInfo">
                     <h1 className="bookingSectionConfirmationText softSectionTitleText">Confirmation Details</h1>
                     <fieldset className="bookingInputSection thickGreyBorder">
-                        <legend for="bookingSectionContactInfoField">Confirmation Details</legend>
+                        <legend className="cardSubTitleText" for="bookingSectionContactInfoField">Confirmation Details</legend>
                         <label className="contactInfoOptionField  thickGreyBorder" id="contactInfoEmailOptionField">
                             <input type="radio" name="bookingSectionContactInfoField" value="emailOption" onClick={() => handleContactMethodPlaceholderTextChange("Enter email address here:")}/>
                             <img src="/Email Icon.png" alt="Option 1"/>

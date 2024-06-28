@@ -21,6 +21,7 @@
   --webpage-vw: 1vw;
 
 }
+
 .webpage{
   min-height: 100vh;
 }
@@ -64,6 +65,92 @@
   color:var(--plant-green);
 }
 
+/*Fonts*/
+.displayText {
+  font-family: 'Markazi Text';
+  font-size: var(--fluid-64);
+  font-weight: 500;
+
+}
+
+.subtitleText {
+  font-family: 'Markazi Text';
+  font-size: var(--fluid-40);
+  font-weight: 400;
+}
+
+.displayDescriptionText {
+  font-family: "Karla";
+  font-size: var(--fluid-18);
+  font-weight:500;
+}
+
+.cardTitleText{
+  font-family: 'Markazi Text';
+  font-size: var(--fluid-24);
+  font-weight: 500;
+  line-height: 90%;
+  text-align: left;
+}
+
+.cardSubTitleText{
+  font-family: 'Karla';
+  font-size: var(--fluid-16);
+  font-weight: 700;
+  text-align: left;
+}
+
+.cardOptionTitleText{
+  font-family: 'Karla';
+  font-size: var(--fluid-16);
+  font-weight: 800;
+  text-align: left;
+}
+
+.cardLinkText{
+  font-family: 'Karla';
+  font-size: var(--fluid-16);
+  font-weight: 700;
+  text-align: left;
+  align-items: start;
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+
+.paragraphTextRegular{
+  font-family: 'Karla';
+  font-weight: 400;
+  font-size: var(--fluid-16);
+  align-items: start;
+  max-width: calc(297*var(--fluid-font-scaler));
+  color: var(--plant-green);
+}
+
+.sectionTitleText{
+  font-family: 'Karla';
+  font-weight: 800;
+  font-size: var(--fluid-20);
+  text-align: left;
+  align-items: start;
+}
+
+.softSectionTitleText{
+  font-family: 'Karla';
+  font-weight: 700;
+  font-size: var(--fluid-18);
+  text-align: left;
+  align-items: start;
+}
+
+.softHighlightText{
+  font-family: 'Karla';
+  font-weight: 500;
+  font-size: var(--fluid-20);
+  text-align: left;
+  align-items: start;
+  max-width: calc(210.86*var(--fluid-font-scaler));
+  color: 333333;
+}
 
 @media screen and (min-width: 720px) {
   :root {
@@ -273,7 +360,146 @@
   .cardTextSection .paragraphTextRegular{
     margin-top:0;
   }
+/*Booking Details*/
+  #bookingSectionTableDetails{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #bookingSectionTableDetails .bookingDetailCard {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  #numOfPeopleCard{
+    padding-left: calc(0.83333333333 * var(--webpage-vw));
+    padding-right: auto;
+    border-right:0;
+    margin-right:0;
+    width: calc(20.5092 * var(--webpage-vw));
+  }
+  #reservationDateCard{
+    padding-left: auto;
+    padding-right: auto;
+    border-left: 0;
+    border-right:0;
+    margin-left: 0;
+    margin-right:0;
+    width: calc(20.5092 * var(--webpage-vw));
+  }
+  #reservationTimeCard{
+    padding-left: auto;
+    padding-right: calc(0.83333333333 * var(--webpage-vw));
+    border-left: 0;
+    margin-left: 0;
+    width: calc(20.5092 * var(--webpage-vw));
+  }
+  .bookingDetailCard .bookingDetailCardIcon{
+    object-fit: contain;
+    margin-right:auto;
+    margin-bottom: calc(0.43333333333 * var(--webpage-vw));
+    margin-top: calc(0.13333333333 * var(--webpage-vw));
+  }
 
+  #bookingSectionSpecialRequests{
+    height: calc(8.6620 * var(--webpage-vw))
+  }
+
+  #bookingSectionSpecialRequests .bookingInputSection{
+    height: calc(7.3009 * var(--webpage-vw))
+  }
+
+  #bookingSectionSpecialRequests .bookingInputSection #bookingSectionSpecialRequestsField{
+    width: 99.1%;
+    height:88%;
+    background-color: var(--light-grey);
+  }
+
+  .bookingSectionConfirmationText{
+    display: none;
+  }
+  #bookingSectionContactInfo .bookingInputSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-content: center;
+  }
+  #bookingSectionContactInfo .bookingInputSection #contactInfoEmailOptionField{
+    margin-bottom: calc(8*var(--fluid-font-scaler));
+  }
+  #bookingSectionContactInfo .bookingInputSection #contactInfoPhoneOptionField{
+    margin-bottom: calc(8*var(--fluid-font-scaler));
+  }
+  .contactInfoOptionField{
+    display:flex;
+    border-color: white!important;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-width: 1px;
+  }
+  .contactInfoOptionField:hover{
+    transition: all 0.2s ease-in-out;
+    border-color: var(--plant-green)!important;
+    border-style: solid;
+    border-width: 1px;
+  }
+  .contactInfoOptionField:has(> input:checked){
+    transition: all 0.2s ease-in-out;
+    background-color: var(--light-grey);
+    border-color: var(--plant-green)!important;
+    border-style: solid;
+    border-width: 1px;
+  }
+  .contactInfoOptionField input{
+    position:absolute;
+    opacity: 0;
+    width: 0;
+    height:0;
+  }
+  .contactInfoTextField{
+    grid-column: span 2;
+  }
+  .bookingSectionSubmitForm{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: calc(1* var(--webpage-vw));
+    margin-bottom: calc(1*var(--webpage-vw));
+  }
+
+  /*Booking Confirmation Details*/
+
+  .bookingConfirmedSection > * {
+    padding-left: 1%;
+    padding-right: 1%;
+    height: calc(41.18055(var(--webpage-vw)))
+  }
+  #bookingConfirmedSectionDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-grey);
+    padding-bottom: 2.6%;
+    padding-top: 2.6%;
+    margin-bottom: -3.4%;
+    margin-top: -1%
+  }
+  #bookingConfirmedMessageText{
+    margin-top:0;
+    margin-bottom: calc(1*var(--webpage-vw));
+  }
+
+  .bookingConfirmedSection #bookingConfirmedSectionReturn {
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    margin-top: calc(3.3429* var(--webpage-vw));
+    margin-bottom: calc(1*var(--webpage-vw));
+    padding-left: 0;
+  }
+
+  /*Nav Menu*/
   .NavMenu {
     display: inline-flex;
     flex-basis: auto;
@@ -334,91 +560,12 @@
     height: calc(3.75*var(--webpage-vw));
   }
 
-  .displayText {
-    font-family: 'Markazi Text';
-    font-size: var(--fluid-64);
-    font-weight: 500;
-
-  }
-
-  .subtitleText {
-    font-family: 'Markazi Text';
-    font-size: var(--fluid-40);
-    font-weight: 400;
-  }
-
   .itemText {
     font-family: 'Karla';
     font-size: var(--fluid-20);
     font-weight: 700;
     color: black;
     text-decoration: none;
-  }
-
-  .displayDescriptionText {
-    font-family: "Karla";
-    font-size: var(--fluid-18);
-    font-weight:500;
-  }
-
-  .cardTitleText{
-    font-family: 'Markazi Text';
-    font-size: var(--fluid-24);
-    font-weight: 500;
-    line-height: 90%;
-    text-align: left;
-  }
-
-  .cardSubTitleText{
-    font-family: 'Karla';
-    font-size: var(--fluid-16);
-    font-weight: 700;
-    text-align: left;
-  }
-
-  .cardLinkText{
-    font-family: 'Karla';
-    font-size: var(--fluid-16);
-    font-weight: 700;
-    text-align: left;
-    align-items: start;
-    text-decoration: none;
-    color: var(--dark-grey);
-  }
-
-  .paragraphTextRegular{
-    font-family: 'Karla';
-    font-weight: 400;
-    font-size: var(--fluid-16);
-    align-items: start;
-    max-width: calc(297*var(--fluid-font-scaler));
-    color: var(--plant-green);
-  }
-
-  .sectionTitleText{
-    font-family: 'Karla';
-    font-weight: 800;
-    font-size: var(--fluid-20);
-    text-align: left;
-    align-items: start;
-  }
-
-  .softSectionTitleText{
-    font-family: 'Karla';
-    font-weight: 700;
-    font-size: var(--fluid-18);
-    text-align: left;
-    align-items: start;
-  }
-
-  .softHighlightText{
-    font-family: 'Karla';
-    font-weight: 500;
-    font-size: var(--fluid-20);
-    text-align: left;
-    align-items: start;
-    max-width: calc(210.86*var(--fluid-font-scaler));
-    color: 333333;
   }
 
   .buttonPrimary {
@@ -690,10 +837,6 @@
     width: calc(25.9345*var(--webpage-vw));
   }
 
-  .bookingDetailInputField.cardSubTitleText{
-
-  }
-
   #bookingSectionSpecialRequests{
     display:flex;
     justify-content: center;
@@ -918,98 +1061,12 @@
     width: 100%;
   }
 
-  .displayText {
-    font-family: 'Markazi Text';
-    font-size: var(--fluid-64);
-    font-weight: 500;
-
-  }
-
-  .subtitleText {
-    font-family: 'Markazi Text';
-    font-size: var(--fluid-40);
-    font-weight: 400;
-  }
-
   .itemText {
     font-family: 'Karla';
     font-size: var(--fluid-16);
     font-weight: 700;
     color: black;
     text-decoration: none;
-  }
-
-  .displayDescriptionText {
-    font-family: "Karla";
-    font-size: var(--fluid-18);
-    font-weight:500;
-  }
-
-  .cardTitleText{
-    font-family: 'Markazi Text';
-    font-size: var(--fluid-24);
-    font-weight: 500;
-    line-height: 90%;
-    text-align: left;
-  }
-
-  .cardSubTitleText{
-    font-family: 'Karla';
-    font-size: var(--fluid-16);
-    font-weight: 700;
-    text-align: left;
-  }
-
-  .cardOptionTitleText{
-    font-family: 'Karla';
-    font-size: var(--fluid-16);
-    font-weight: 800;
-    text-align: left;
-  }
-
-  .cardLinkText{
-    font-family: 'Karla';
-    font-size: var(--fluid-16);
-    font-weight: 700;
-    text-align: left;
-    align-items: start;
-    text-decoration: none;
-    color: var(--dark-grey);
-  }
-
-  .paragraphTextRegular{
-    font-family: 'Karla';
-    font-weight: 400;
-    font-size: var(--fluid-16);
-    align-items: start;
-    max-width: calc(297*var(--fluid-font-scaler));
-    color: var(--plant-green);
-  }
-
-  .sectionTitleText{
-    font-family: 'Karla';
-    font-weight: 800;
-    font-size: var(--fluid-20);
-    text-align: left;
-    align-items: start;
-  }
-
-  .softSectionTitleText{
-    font-family: 'Karla';
-    font-weight: 700;
-    font-size: var(--fluid-18);
-    text-align: left;
-    align-items: start;
-  }
-
-  .softHighlightText{
-    font-family: 'Karla';
-    font-weight: 500;
-    font-size: var(--fluid-20);
-    text-align: left;
-    align-items: start;
-    max-width: calc(210.86*var(--fluid-font-scaler));
-    color: 333333;
   }
 
   .buttonPrimary {
