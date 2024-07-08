@@ -66,14 +66,23 @@ const BookingSection = () => {
                         <legend className="cardSubTitleText" for="reservationTimeField">Reservation Time</legend>
                         <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="reservationDateField">
                             <option className="bookingDetailOption cardSubTitleText" value="7:00">7:00 PM</option>
-                            <option className="bookingDetailOption cardSubTitleText" value="7:00">7:30 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="7:30">7:30 PM</option>
                             <option className="bookingDetailOption cardSubTitleText" value="8:00">8:00 PM</option>
-                            <option className="bookingDetailOption cardSubTitleText" value="8:00">8:30 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="8:30">8:30 PM</option>
                             <option className="bookingDetailOption cardSubTitleText" value="9:00">9:00 PM</option>
-                            <option className="bookingDetailOption cardSubTitleText" value="9:00">9:30 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="9:30">9:30 PM</option>
                             <option className="bookingDetailOption cardSubTitleText" value="10:00">10:00 PM</option>
-                            <option className="bookingDetailOption cardSubTitleText" value="10:00">10:30 PM</option>
+                            <option className="bookingDetailOption cardSubTitleText" value="10:30">10:30 PM</option>
                             <option className="bookingDetailOption cardSubTitleText" value="11:00">11:00 PM</option>
+                        </select>
+                    </fieldset>
+                    <fieldset className="bookingDetailCard" id="specialOccasionCard">
+                        <img className="specialOccasionCardIcon" id="champagneGlassIcon" src="/Champagne Bottles.png" alt="Champagne Bottles Icon"/>
+                        <legend className="cardSubTitleText" for="specialOccasionField">Occasion</legend>
+                        <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="specialOccasionField">
+                            <option className="specialOccasionOption cardSubTitleText" value="none">None</option>
+                            <option className="specialOccasionOption cardSubTitleText" value="Birthday">Birthday</option>
+                            <option className="specialOccasionOption cardSubTitleText" value="Anniversary">Anniversary</option>
                         </select>
                     </fieldset>
                 </section>
