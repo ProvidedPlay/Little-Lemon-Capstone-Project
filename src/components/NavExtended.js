@@ -17,12 +17,12 @@ const NavExtended = () => {
     return(
         <nav className={`navExtendedMenu ${menuIsOpen ? 'extended' : 'retracted'}`}>
             <ul className='NavMenu'>
-                <li><Link to="/" className="itemText" onClick={() => {handleToggleMenu()}}>Home</Link></li>
-                <li><a className="itemText" href="url here" onClick={() => {handleToggleMenu()}}>About</a></li>
-                <li><a className="itemText" href="url here" onClick={() => {handleToggleMenu()}}>Menu</a></li>
-                <li><Link to="/reservations" className="itemText" onClick={() => {handleToggleMenu()}}>Reservations</Link></li>
-                <li><a className="itemText" href="url here" onClick={() => {handleToggleMenu()}}>Order Online</a></li>
-                <li><a className="itemText" href="url here" onClick={() => {handleToggleMenu()}}>Login</a></li>
+                <li><Link to="/" className="navLink itemText" onClick={() => {handleToggleMenu()}}>Home</Link></li>
+                <li><a className="navLink itemText" href="url here" onClick={() => {handleToggleMenu()}}>About</a></li>
+                <li><a className="navLink itemText" href="url here" onClick={() => {handleToggleMenu()}}>Menu</a></li>
+                <li><Link to="/reservations" className="navLink itemText" onClick={() => {handleToggleMenu()}}>Reservations</Link></li>
+                <li><a className="navLink itemText" href="url here" onClick={() => {handleToggleMenu()}}>Order Online</a></li>
+                <li><a className="navLink itemText" href="url here" onClick={() => {handleToggleMenu()}}>Login</a></li>
             </ul>
         </nav>
     )

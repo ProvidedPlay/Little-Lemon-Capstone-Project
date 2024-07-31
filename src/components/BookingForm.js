@@ -14,6 +14,7 @@ const BookingForm = () => {
         produceAvailableTimesDropdownMenu,
         handleFormInputChange,
         handleSubmitForm,
+        getDefaultFormValue,
     } = useBookingFormManager();
 
     const handleSubmit=(event) => {
@@ -41,7 +42,7 @@ const BookingForm = () => {
                 <img className="bookingDetailCardIcon" id="peopleIcon" src="/People Icon.png" alt="Number of People Icon"/>
                 <legend className="cardSubTitleText" htmlFor="numOfPeopleField">Number of People</legend>
                 <label className="invisibleLabel" htmlFor="numOfPeopleField">Number of People</label>
-                <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="numOfPeopleField" onChange={handleFormInputChange} required>
+                <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="numOfPeopleField" defaultValue={getDefaultFormValue("numberOfPeople")} onChange={handleFormInputChange} required>
                     <option className="bookingDetailOption cardSubTitleText" value="1 Person">1 Person</option>
                     <option className="bookingDetailOption cardSubTitleText" value="2 People">2 People</option>
                     <option className="bookingDetailOption cardSubTitleText" value="3 People">3 People</option>
@@ -57,7 +58,7 @@ const BookingForm = () => {
                 <img className="bookingDetailCardIcon" id="peopleIcon" src="/Calendar Icon.png" alt="Calendar Icon"/>
                 <legend className="cardSubTitleText" htmlFor="reservationDateField">Reservation Date</legend>
                 <label className="invisibleLabel" htmlFor="reservationDateField">Reservation Date</label>
-                <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="reservationDateField" data-testid="reservationDateSelect" onChange={handleFormInputChange} required>
+                <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="reservationDateField" defaultValue={getDefaultFormValue("reservationDate")} data-testid="reservationDateSelect" onChange={handleFormInputChange} required>
                     <option className="bookingDetailOption cardSubTitleText" id="option 1" value={0}>{getFutureDayMonth(0)[0].toString()}</option>
                     <option className="bookingDetailOption cardSubTitleText" id="option 2" value={1}>{getFutureDayMonth(1)[0].toString()}</option>
                     <option className="bookingDetailOption cardSubTitleText" id="option 3" value={2}>{getFutureDayMonth(2)[0].toString()}</option>
@@ -73,7 +74,7 @@ const BookingForm = () => {
                 <img className="bookingDetailCardIcon" id="calendarIcon" src="/Clock Icon.png" alt="Clock Icon"/>
                 <legend className="cardSubTitleText" htmlFor="reservationTimeField">Reservation Time</legend>
                 <label className="invisibleLabel" htmlFor="reservationTimeField">Reservation Time</label>
-                <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="reservationTimeField" data-testid="reservationTimeSelect" onChange={handleFormInputChange} required>
+                <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="reservationTimeField" data-testid="reservationTimeSelect" defaultValue={getDefaultFormValue("reservationTime")} onChange={handleFormInputChange} required>
                     {produceAvailableTimesDropdownMenu()}
                 </select>
             </fieldset>
@@ -81,7 +82,7 @@ const BookingForm = () => {
                 <img className="bookingDetailCardIcon" id="champagneGlassIcon" src="/Champagne Bottles.png" alt="Champagne Bottles Icon"/>
                 <legend className="cardSubTitleText" htmlFor="specialOccasionField">Occasion</legend>
                 <label className="invisibleLabel" htmlFor="specialOccasionField">Occasion</label>
-                <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="specialOccasionField" onChange={handleFormInputChange}>
+                <select className="bookingDetailInputField cardSubTitleText thickGreyBorder" id="specialOccasionField" defaultValue={getDefaultFormValue("specialOccasion")} onChange={handleFormInputChange}>
                     <option className="specialOccasionOption cardSubTitleText" value="none">None</option>
                     <option className="specialOccasionOption cardSubTitleText" value="Birthday">Birthday</option>
                     <option className="specialOccasionOption cardSubTitleText" value="Anniversary">Anniversary</option>
@@ -92,7 +93,7 @@ const BookingForm = () => {
             <fieldset className="bookingInputSection">
                 <legend className="cardSubTitleText" htmlFor="bookingSectionSpecialRequestsField">Special Requests</legend>
                 <label className="invisibleLabel" htmlFor="bookingSectionSpecialRequestsField">Special Requests</label>
-                <textarea className="thickGreyBorder cardSubTitleText" form="bookingSectionDetails" name="bookingSectionSpecialRequestsField" id="bookingSectionSpecialRequestsField" placeholder="Special Requests:" onChange={handleFormInputChange}/>
+                <textarea className="thickGreyBorder cardSubTitleText" form="bookingSectionDetails" name="bookingSectionSpecialRequestsField" id="bookingSectionSpecialRequestsField" placeholder="Special Requests:" defaultValue={getDefaultFormValue("specialRequests")} onChange={handleFormInputChange}/>
             </fieldset>
         </section>
         <section id="bookingSectionContactInfo">
@@ -107,7 +108,7 @@ const BookingForm = () => {
                     <input type="radio" name="bookingSectionContactInfoField" value="phoneOption" defaultChecked={contactMethodInputType === "tel" ? true : false} aria-label="On Click" onClick={() => handleContactMethodPlaceholderTextChange("Enter phone number here:", "tel")}/>
                     <img src="/Phone Icon.png" alt="Phone Icon"/>
                 </label>
-                <input className="contactInfoTextField thickGreyBorder cardSubTitleText" type={contactMethodInputType} name="contactInfoTextField" id="contactInfoTextField" data-testid="contactInfoTextField" placeholder={contactMethodPlaceholderText} onChange={handleFormInputChange} minLength="8" required/>
+                <input className="contactInfoTextField thickGreyBorder cardSubTitleText" type={contactMethodInputType} name="contactInfoTextField" id="contactInfoTextField" data-testid="contactInfoTextField" placeholder={contactMethodPlaceholderText} defaultValue={getDefaultFormValue("contactDetails")} onChange={handleFormInputChange} minLength="8" required/>
             </fieldset>
         </section>
         <section className="bookingSectionSubmitForm">

@@ -7,7 +7,6 @@ const useMenuToggler = () => {
     } = useAppContext()
 
     const toggleMenu = () => {
-        console.log(!menuIsOpen)
         setMenuIsOpen(!menuIsOpen);
     }
 

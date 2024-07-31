@@ -20,12 +20,12 @@ const Nav = () => {
                 <img className="navButtonIcon" src="/icon _hamburger menu_.png" alt="Nav Menu Button"/>
             </section>
             <ul className={`NavMenu`}>
-                <li><Link to="/" className="itemText">Home</Link></li>
-                <li><a className="itemText" href="url here">About</a></li>
-                <li><a className="itemText" href="url here">Menu</a></li>
-                <li><Link to="/reservations" className="itemText">Reservations</Link></li>
-                <li><a className="itemText" href="url here">Order Online</a></li>
-                <li><a className="itemText" href="url here">Login</a></li>
+                <li><Link to="/" className="navLink itemText">Home</Link></li>
+                <li><a className="navLink itemText" href="url here">About</a></li>
+                <li><a className="navLink itemText" href="url here">Menu</a></li>
+                <li><Link to="/reservations" className="navLink itemText">Reservations</Link></li>
+                <li><a className="navLink itemText" href="url here">Order Online</a></li>
+                <li><a className="navLink itemText" href="url here">Login</a></li>
             </ul>
             {/* Mobile version*/}
         </nav>

@@ -86,9 +86,26 @@ const useBookingFormManager = () => {
         setAvailableTimes(initialFormState.availableTimes)
     }
 
+    const getDefaultFormValue = (formElement) => {
+        switch(formElement){
+            case "numberOfPeople":
+                return(numberOfPeople)
+            case "reservationDate":
+                return(reservationDate)
+            case "reservationTime":
+                return(reservationTime)
+            case "specialOccasion":
+                return(specialOccasion)
+            case "specialRequests":
+                return(specialRequests)
+            case "contactDetails":
+                return(contactDetails)
+        }
+    }
+
 
     return(
-        {produceAvailableTimesDropdownMenu, handleFormInputChange, getFutureDayMonth, handleSubmitForm}
+        {produceAvailableTimesDropdownMenu, handleFormInputChange, getFutureDayMonth, handleSubmitForm, getDefaultFormValue}
     )
 }
 

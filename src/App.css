@@ -159,6 +159,11 @@
   left: 0px;
 }
 
+.buttonPrimary:hover {
+  filter: brightness(80%)
+}
+
+
 @media screen and (min-width: 720px) {
   :root {
 
@@ -526,6 +531,10 @@
     align-items: center;
     margin: 0;
     padding: 0;
+  }
+
+  .navLink:hover{
+    color: var(--plant-green);
   }
 
   .navExtendedMenu {
@@ -1036,13 +1045,17 @@
     border-bottom-width: 1.5px;
   }
 
-  .navExtendedMenu .NavMenu li > *{
+  .navExtendedMenu .NavMenu li > .navLink{
     display:inline-block;
     width: 100%;
     justify-self: center;
     text-align: center;
     color:white;
     text-shadow: black 1px 1px;
+  }
+
+  .navExtendedMenu .NavMenu li > .navLink:hover{
+    color: var(--mid-grey)
   }
 
   .Footer {
@@ -1102,7 +1115,6 @@
     align-items: center;
     justify-content: center;
   }
-
   .thickGreyBorder {
     border-style: solid;
     border-width: 6px;
