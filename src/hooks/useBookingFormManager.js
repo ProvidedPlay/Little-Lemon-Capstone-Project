@@ -1,6 +1,7 @@
 import { useAppContext } from "../context/AppContextProvider";
 import { fetchAPI, submitAPI } from "../utilities/API";
 import { useNavigate } from "react-router-dom";
+import getFutureDayMonth from "../utilities/getFutureDayMonth";
 
 const useBookingFormManager = () => {
 
@@ -11,10 +12,20 @@ const useBookingFormManager = () => {
         reservationTime, setReservationTime,
         specialOccasion, setSpecialOccasion,
         specialRequests, setSpecialRequests,
-        contactDetails, setContactDetails
+        contactDetails, setContactDetails,
     } = useAppContext()
 
     const navigate = useNavigate();
+
+    const initialFormState = {
+        numberOfPeople: "1 Person",
+        reservationDate: getFutureDayMonth(0)[0],
+        reservationTime: "17:00",
+        specialOccasion: "none",
+        specialRequests: "",
+        contactDetails: "",
+        availableTimes: fetchAPI(new Date()),
+    }
 
     const produceAvailableTimesDropdownMenu = () => {
         return(
@@ -22,34 +33,33 @@ const useBookingFormManager = () => {
         )
     }
 
-    const getFutureDayMonth =  (daysAfterToday) => {
-        const date = new Date()
-        const targetDate = new Date(date)
-
-        targetDate.setDate(targetDate.getDate() + daysAfterToday)
-        return(
-            [`${targetDate.toLocaleString('default', {month:'long'})} ${targetDate.getDate().toLocaleString()}`,targetDate]
-        )
-    }
-
     const handleFormInputChange = (event) => {
         const value = event.target.value;
         const formInputFieldID = event.target.id
         switch(formInputFieldID) {
-            case "numOfPeopleList":
+            case "numOfPeopleField":
                 setNumberOfPeople(value)
+                break;
             case "reservationDateField":
-                const newReservationDate = getFutureDayMonth(value)[1];
+                const newReservationDate = getFutureDayMonth(parseInt(value))[1];
                 setReservationDate(newReservationDate);
                 setAvailableTimes(fetchAPI(newReservationDate))
+                break;
             case "reservationTimeField":
                 setReservationTime(value)
+                break;
             case "specialOccasionField":
                 setSpecialOccasion(value)
+                console.log("specialOccasion updated")
+                break;
             case "bookingSectionSpecialRequestsField":
                 setSpecialRequests(value)
+                break;
             case "contactInfoTextField":
                 setContactDetails(value)
+                break;
+            default:
+                console.log("nothing submitted")
         }
     }
 
@@ -62,9 +72,20 @@ const useBookingFormManager = () => {
         console.log(formData)
         if (submitAPI(formData) === true){
             navigate("/reservationsConfirmed")
-            console.log("submitted!")
+            resetForm();
         }
     }
+
+    const resetForm = () => {
+        setNumberOfPeople(initialFormState.numberOfPeople)
+        setReservationDate(initialFormState.reservationDate)
+        setReservationTime(initialFormState.reservationTime)
+        setSpecialOccasion(initialFormState.specialOccasion)
+        setSpecialRequests(initialFormState.specialRequests)
+        setContactDetails(initialFormState.contactDetails)
+        setAvailableTimes(initialFormState.availableTimes)
+    }
+
 
     return(
         {produceAvailableTimesDropdownMenu, handleFormInputChange, getFutureDayMonth, handleSubmitForm}

@@ -1,25 +1,16 @@
-import { fireEvent, getAllByTestId, getByTestId, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import BookingForm from './components/BookingSection';
 import AppContextProvider from './context/AppContextProvider';
 import { BrowserRouter } from 'react-router-dom';
 import { fetchAPI } from './utilities/API';
+import userEvent from '@testing-library/user-event';
+import getFutureDayMonth from './utilities/getFutureDayMonth';
 
-const initialExpectedDates = fetchAPI(new Date());
-const updatedExpectedDates = fetchAPI(new Date())
+const user = userEvent.setup()
 
-test('checks that reservation time select menu is present on the page', () => {
-    render(
-        <BrowserRouter>
-            <AppContextProvider>
-                <BookingForm/>
-            </AppContextProvider>
-        </BrowserRouter>
-    );
-    const reservationTimeSelectMenu = screen.getByTestId("reservationTimeSelect")
-    expect(reservationTimeSelectMenu).toBeInTheDocument();
-});
+const initialExpectedTimes = fetchAPI(new Date());
 
-test('returns initial times', () => {
+test('checks that initial reservation times populate on page load', () => {
     render(
         <BrowserRouter>
             <AppContextProvider>
@@ -28,10 +19,10 @@ test('returns initial times', () => {
         </BrowserRouter>
     );
     const reservationTimeSelectOptions = screen.getAllByTestId("reservationTimeSelectOption")
-    initialExpectedDates.map((expectedDate, expectedDateIndex) => {expect(reservationTimeSelectOptions[expectedDateIndex].value).toBe(expectedDate.toString())})
+    initialExpectedTimes.map((expectedTime, expectedTimeIndex) => {expect(reservationTimeSelectOptions[expectedTimeIndex].value).toBe(expectedTime.toString())})
 });
 
-test('returns updated times', async() => {
+test('checks that reservation times update when date is updated', async() => {
     render(
         <BrowserRouter>
             <AppContextProvider>
@@ -43,8 +34,29 @@ test('returns updated times', async() => {
 
 
     const reservationDateSelectMenu = screen.getByTestId("reservationDateSelect")
-    fireEvent.click(reservationDateSelectMenu)
-    fireEvent.change(reservationDateSelectMenu, {target: {id: "option 2"}})
-    const reservationTimeSelectOptions = await screen.getAllByTestId("reservationTimeSelectOption")
-    updatedExpectedDates.map((expectedDate, expectedDateIndex) => {expect(reservationTimeSelectOptions[expectedDateIndex].value).toBe(expectedDate.toString())})
+    await user.selectOptions(reservationDateSelectMenu, "1")
+
+    const reservationTimeSelectOptions = screen.getAllByTestId("reservationTimeSelectOption")
+    const tomorrowsExpectedTimes = fetchAPI(getFutureDayMonth(1)[1]);
+    tomorrowsExpectedTimes.map((expectedTime, expectedTimeIndex) => {expect(reservationTimeSelectOptions[expectedTimeIndex].value).toBe(expectedTime.toString())})
 });
+
+test('will attempt to submit form without adding values to "required" fields; should identify input field as invalid', async() => {
+    render(
+        <BrowserRouter>
+            <AppContextProvider>
+                <BookingForm/>
+            </AppContextProvider>
+        </BrowserRouter>
+    );
+
+    const submitButton = screen.getByTestId("submitButton")
+    const contactInfoTextField = screen.getByTestId("contactInfoTextField")
+
+    expect(submitButton).toBeInTheDocument();
+    expect(contactInfoTextField).toBeInTheDocument();
+
+    await user.click(submitButton);
+    expect(contactInfoTextField).toBeInvalid();
+});
+

@@ -20,7 +20,7 @@ const BookingConfirmedSection = () => {
             </section>
             <section id="bookingConfirmedSectionReturn">
                     <button className="buttonPrimary">
-                        <Link className="link" to="/" onClick={() => handleToggleMenu()}>
+                        <Link className="link" to="/" aria-label="On Click" onClick={() => handleToggleMenu()}>
                             <p className="itemText">Back to Home</p>
                         </Link>
                     </button>

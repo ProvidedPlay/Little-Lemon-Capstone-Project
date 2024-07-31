@@ -15,7 +15,7 @@ const HeroSection= () => {
             <p className="subtitleText" id="restaurantSubTitle">Chicago</p>
             <p className="displayDescriptionText" id="restaurantDescription">We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
                 <button className="buttonPrimary">
-                    <Link className="link" to="/reservations" onClick={() => handleToggleMenu()}>
+                    <Link className="link" to="/reservations" aria-label="On Click" onClick={() => handleToggleMenu()}>
                     <p className="itemText">Reserve A Table</p>
                     </Link>
                 </button>
