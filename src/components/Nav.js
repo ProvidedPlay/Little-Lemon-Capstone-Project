@@ -17,7 +17,7 @@ const Nav = () => {
         <nav className="Nav">
 
             <section className={`navButton ${menuIsOpen ? "open" : "closed"}`} aria-label="On Click" onClick={() => handleToggleMenu()}>
-                <img className="navButtonIcon" src="/icon _hamburger menu_.png" alt="Nav Menu Button"/>
+                <img className="navButtonIcon" src="icon _hamburger menu_.png" alt="Nav Menu Button"/>
             </section>
             <ul className={`NavMenu`}>
                 <li><Link to="/" className="navLink itemText">Home</Link></li>

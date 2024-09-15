@@ -16,7 +16,7 @@ const BookingConfirmedSection = () => {
             </section>
             <section id="bookingConfirmedSectionDetails">
                 <h1 className="displayText" id="bookingConfirmedMessageText">The Table Has Been Successfully Reserved!</h1>
-                <img src="/Checkmark Icon.png" alt="Checkmark Icon"/>
+                <img src="Checkmark Icon.png" alt="Checkmark Icon"/>
             </section>
             <section id="bookingConfirmedSectionReturn">
                     <button className="buttonPrimary">

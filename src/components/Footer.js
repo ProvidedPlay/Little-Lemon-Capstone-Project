@@ -5,7 +5,7 @@ const Footer = () => {
     return(
     <div className="Footer">
         <footer className="footerPanel">
-            <img className="Logo" src="/LittleLemonLogo.png" alt="Logo"/>
+            <img className="Logo" src="LittleLemonLogo.png" alt="Logo"/>
             <section>
                 <p className="sectionTitleText">Doormat Navigation</p>
                 <Nav/>

@@ -14,7 +14,7 @@ const HighlightsSection = () => {
             <section id="highlightsSectionCards">
                 <article className="highlightsCard">
                     <section className="cardImageSection">
-                        <img src="/greek salad.png" alt="Greek Salad" />
+                        <img src="greek salad.png" alt="Greek Salad" />
                     </section>
                     <section className="cardTextSection">
                         <section className="cardTitleRow">
@@ -32,7 +32,7 @@ const HighlightsSection = () => {
                 </article>
                 <article className="highlightsCard">
                     <section className="cardImageSection">
-                        <img src="/Bruchetta.png" alt="Bruchetta" />
+                        <img src="Bruchetta.png" alt="Bruchetta" />
                     </section>
                     <section className="cardTextSection">
                         <section className="cardTitleRow">

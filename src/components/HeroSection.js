@@ -21,7 +21,7 @@ const HeroSection= () => {
                 </button>
         </section>
         <section className="heroImageSection">
-            <img className="heroImage" src="/restauranfood.png" alt="Hero"></img>
+            <img className="heroImage" src="restauranfood.png" alt="Hero"></img>
         </section>
 
      </div>
