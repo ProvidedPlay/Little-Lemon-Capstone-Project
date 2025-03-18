@@ -21,11 +21,11 @@ const Nav = () => {
             </section>
             <ul className={`NavMenu`}>
                 <li><Link to="/" className="navLink itemText">Home</Link></li>
-                <li><a className="navLink itemText" href="url here">About</a></li>
-                <li><a className="navLink itemText" href="url here">Menu</a></li>
+                <li><Link to="/" className="navLink itemText">About</Link></li>
+                <li><Link to="/" className="navLink itemText">Menu</Link></li>
                 <li><Link to="/reservations" className="navLink itemText">Reservations</Link></li>
-                <li><a className="navLink itemText" href="url here">Order Online</a></li>
-                <li><a className="navLink itemText" href="url here">Login</a></li>
+                <li><Link to="/reservations" className="navLink itemText">Order Online</Link></li>
+                <li><Link to="/" className="navLink itemText">Login</Link></li>
             </ul>
             {/* Mobile version*/}
         </nav>
