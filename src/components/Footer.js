@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="footerPanel">
             <img className="Logo" src="LittleLemonLogo.png" alt="Logo"/>
             <section>
-                <p className="sectionTitleText">Doormat Navigation</p>
+                <p className="sectionTitleText">Quick Links</p>
                 <Nav/>
             </section>
             <section>
