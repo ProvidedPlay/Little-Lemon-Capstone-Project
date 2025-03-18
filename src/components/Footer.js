@@ -21,9 +21,9 @@ const Footer = () => {
             <section>
                 <p className="sectionTitleText">Social Media Links</p>
                 <ul>
-                    <li className="softHighlightText"><p>Address: </p></li>
-                    <li className="softHighlightText"><p>Phone Number: </p></li>
-                    <li className="softHighlightText"><p>Email: </p></li>
+                    <li className="softHighlightText"><p>Link 1 </p></li>
+                    <li className="softHighlightText"><p>Link 2</p></li>
+                    <li className="softHighlightText"><p>Link 3</p></li>
                 </ul>
             </section>
         </footer>
